@@ -1,33 +1,70 @@
 <?php
-echo "hello php!";
 
-$name="Ryoko";
-if($name="Ryoko"){
-    echo "私はあなたの名前です。";
-} else {
-    echo "あなたの名前ではありません。";
+//1
+
+function twice($i){
+return $i*2;
 }
+echo twice(2);
 
-$sum=0;
-for($i=1; $i<=1000; $i++){
-$sum+=$i;
+//2
+function f($a,$b){
+    return $a + $b;
 }
-echo $sum;
+echo f(3,6);
 
-$fruits=array("banana","apple","orange","grape","peach");
-foreach($fruits as $fruit){
-    echo $fruit." ";
+//3
+
+   function times($array){
+    $num=1;
+    foreach($array as $value){
+    $num *= $value;
+       }
+    return $num;
 }
-
-/* for文の始めの値を定義する /
-$start = 1;
-/* for文の終わりの値を定義する */
-$end = 100;
-
-for($i = $start; $i < $end; $i++){
-
-  // 5で割り切れたら{}内を実行する
-  if(($i % 5) == 0){
-    echo $i;
-  }
+  $list=[1,2,5,4,5];
+  echo times($list);
+    
+    
+//4
+  function max_array($arr){
+ $max_number = $arr[0];
+ foreach($arr as $a){
+if($max_number<$a){
+    $max_number = $a;
 }
+ }
+ return  $max_number;
+ }
+ $list=[4,6,3,4,5];
+ echo max_array($list);
+
+ //5
+ 
+//strip_tags
+$text = '<p>今日も</p><!-- Comment --> <a href="#fragment">頑張りましょう！</a>';
+echo strip_tags($text);
+echo "\n";
+
+//array_push
+$fruit = array("banana","apple","orange");
+array_push($fruit,"grape","peach");
+print_r($fruit) ;
+
+//array_merge
+
+$name=array("keiko","michiko","satoko","yuko");
+$name2=array("nastuko","sachiko");
+$name3=array("kanta","satoshi");
+$names=array_merge($name,$name2,$name3);
+
+print_r($names);
+
+//time, mktime
+	$timestamp = time() ;
+	echo $timestamp ;
+	
+//date
+
+
+    
